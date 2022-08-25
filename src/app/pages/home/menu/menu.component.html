@@ -1,1 +1,15 @@
-<p>menu works!</p>
+<app-navbar></app-navbar>
+
+<div class="w-100 m-4">
+
+  <app-receta-card
+    *ngFor="let plato of platosDelMenu"
+    [plato]="plato"
+    [textoBotonMenu]="'Eliminar del menú'"
+    [claseBotonMenu]="'danger'"
+    (platoClickeado)="eliminarPlatoDelMenu($event)">
+  </app-receta-card>
+
+</div>
+
+<h2>Precio total: {{precioTotal | currency}}</h2>

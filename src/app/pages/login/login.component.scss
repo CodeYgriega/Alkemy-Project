@@ -1,8 +1,4 @@
-.contenedor{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+.fondo{
   height: 100vh;
   background: linear-gradient(to right, white, #337ab7);
 }
@@ -25,6 +21,6 @@ form {
 
 @media screen and (max-width: 500px){
   form{
-    width: 85%;
+    width: 75%;
   }
 }
