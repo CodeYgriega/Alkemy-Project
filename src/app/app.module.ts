@@ -11,9 +11,12 @@ import { HomeComponent } from './pages/home/home.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { SearchComponent } from './pages/home/search/search.component';
+import { SearchComponent } from './pages/search/search.component';
 import { MenuComponent } from './pages/home/menu/menu.component';
 import { RecetaCardComponent } from './pages/home/receta-card/receta-card.component';
+import { FormSearchComponent } from './pages/search/form-search/form-search.component';
+import { HorasYminutosPipePipe } from './pipes/horas-yminutos-pipe.pipe';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +27,11 @@ import { RecetaCardComponent } from './pages/home/receta-card/receta-card.compon
     NavbarComponent,
     FooterComponent,
     SearchComponent,
+    FormSearchComponent,
     MenuComponent,
-    RecetaCardComponent
+    RecetaCardComponent,
+    HorasYminutosPipePipe,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,18 @@
-<p>details works!</p>
+<h1
+class="w-100 height pb-5 text-dark-opacity-75 d-flex justify-content-center align-items-center gap-2"
+*ngIf="mostrarSpinner">
+  <app-spinner
+  [clase]="'primary'">
+  </app-spinner>
+  Cargando contenido...
+</h1>
+
+<p class="text-danger fs-1">
+  {{platoSolicitado.title}}
+</p>
+
+<p class="text-warning fs-1">
+  {{platoSolicitado.summary}}
+</p>
+
+<img src="{{platoSolicitado.image}}">

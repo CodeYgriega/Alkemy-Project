@@ -1,0 +1,52 @@
+<form class="d-flex flex-column justify-content-start container w-75 px-md-5">
+  <h1 class="row my-4 mx-md-5">Buscador de platos:</h1>
+  <div class="row mx-md-5">
+    <input
+    type="text"
+    class="form-control col rounded-0 shadow"
+    placeholder="Escriba aquí su plato..."
+    #buscador>
+
+    <button
+    class="btn btn-primary col-4 col-lg-2 rounded-0 shadow d-flex justify-content-center"
+    (click)="enviarYbuscarReceta(buscador.value)"
+    [disabled]="mostrarSpinner">
+
+      <app-spinner
+      [clase]="'light'"
+      *ngIf="mostrarSpinner">
+      </app-spinner>
+
+      <p
+      *ngIf="!mostrarSpinner"
+      class="p-0 m-0 d-flex align-items-center gap-1">
+        Buscar
+        <span class="material-symbols-outlined">
+          search
+        </span>
+      </p>
+
+    </button>
+  </div>
+
+  <div
+  class="fs-3 my-4 mx-md-5"
+  *ngIf="mostrarSpinner">
+    <app-spinner
+    [clase]="'primary'"
+    *ngIf="mostrarSpinner">
+    </app-spinner>
+    Buscando resultados...
+  </div>
+
+</form>
+
+<div class="w-100 p-5 d-flex flex-wrap justify-content-center gap-3">
+  <app-receta-card
+  *ngFor="let plato of platosObtenidos"
+  [plato]="plato"
+  [textoBotonMenu]="'Añadir al menú'"
+  [claseBotonMenu]="'primary'"
+  (platoClickeado)="agregarAlMenu($event)">
+  </app-receta-card>
+</div>

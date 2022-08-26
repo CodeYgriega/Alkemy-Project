@@ -1,15 +1,39 @@
-<app-navbar></app-navbar>
+<div class="container">
 
-<div class="w-100 m-4">
+  <div class="my-4 mx-5 mx-lg-0">
+    <h1 class="my-4">
+      Tu menú:
+    </h1>
 
-  <app-receta-card
-    *ngFor="let plato of platosDelMenu"
-    [plato]="plato"
-    [textoBotonMenu]="'Eliminar del menú'"
-    [claseBotonMenu]="'danger'"
-    (platoClickeado)="eliminarPlatoDelMenu($event)">
-  </app-receta-card>
+    <p
+    *ngIf="platosDelMenu <= 0"
+    class="fs-4 text-dark-opacity-50">
+      Aquí se mostrarán los platos que hayas añadido al menú, para agregar uno navega hacia la sección "Buscar platos" e interactúa con el buscador.
+    </p>
+  </div>
 
+    <div class="w-100 d-flex justify-content-center flex-wrap gap-3 justify-content-xl-start">
+
+      <app-receta-card
+        *ngFor="let plato of platosDelMenu"
+        [plato]="plato"
+        [textoBotonMenu]="'Eliminar del menú'"
+        [claseBotonMenu]="'danger'"
+        (platoClickeado)="eliminarPlatoDelMenu($event)">
+      </app-receta-card>
+
+    </div>
+
+    <p class="">
+      Precio total:
+      {{precioTotal | currency}}
+    <p>
+    <p class="">
+      Promedio de tiempo de preparación:
+      {{promedioTotalPreparacion | horasYminutosPipe}}
+    <p>
+     <p class="">
+      Promedio total de HealthScore:
+      {{promedioTotalHealthScore | percent}}
+    <p>
 </div>
-
-<h2>Precio total: {{precioTotal | currency}}</h2>

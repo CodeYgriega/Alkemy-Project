@@ -27,19 +27,22 @@
 
     <li class="list-group-item py-2">
       <span class="fw-bold">
-        Vegetariano:
+        Vegano:
       </span>
-      <!--CONDICIONALES PARA MOSTRAR UN "SI" SI ES VEGETARIANO Y UN "NO" SI NO LO ES-->
-      <span *ngIf="plato.vegetarian">Si</span>
-      <span *ngIf="!plato.vegetarian">No</span>
+      <!--CONDICIONALES PARA MOSTRAR UN "SI" SI ES VEGANO Y UN "NO" SI NO LO ES-->
+      <span *ngIf="plato.vegan">Si</span>
+      <span *ngIf="!plato.vegan">No</span>
     </li>
   </ul>
 
   <div class="card-body d-flex gap-3 justify-content-center align-items-center pt-4">
-    <button
-    class="btn btn-primary">
-      Ver detalles
-    </button>
+
+    <a routerLink="/details/{{plato.id}}">
+      <button
+      class="btn btn-primary">
+        Ver detalles
+      </button>
+    </a>
 
     <button
     class="btn btn-{{claseBotonMenu}}"

@@ -7,19 +7,28 @@
     <div class="navbar-nav w-100 d-flex justify-content-between">
       <div class="d-md-flex">
         <a
-          class="nav-item nav-link"
+          class="nav-item nav-link d-flex align-items-center gap-1"
           routerLink="/home">
-          Home
+          <span class="material-symbols-outlined">
+            event_note
+          </span>
+          Menú
         </a>
         <a
-          class="nav-item nav-link"
-          routerLink="/menu">
-          Ver menú
+          class="nav-item nav-link d-flex align-items-center gap-1"
+          routerLink="/search">
+          <span class="material-symbols-outlined">
+            search
+          </span>
+          Buscar platos
         </a>
       </div>
       <button
-      class="btn btn-outline-light"
+      class="btn btn-outline-light d-flex align-items-center gap-1"
       (click)="cerrarSesion()">
+        <span class="material-symbols-outlined">
+          logout
+        </span>
         Cerrar sesión
       </button>
     </div>
