@@ -1,10 +1,8 @@
 <div class="container">
-
   <div class="my-4 mx-5">
     <h1 class="my-4 mt-5 fw-bold opacity-75">
       Tu menú:
     </h1>
-
     <div
     *ngIf="platosDelMenu <= 0"
     class="fs-4 bg-dark bg-opacity-50 text-white p-3 rounded shadow">
@@ -22,17 +20,13 @@
 
 </div>
 
-<div class="w-100 d-flex justify-content-center flex-wrap gap-3 container-xl px-md-3 justify-content-xl-start">
-
-  <app-plato-card
-    *ngFor="let plato of platosDelMenu"
-    [plato]="plato"
-    [textoBotonMenu]="'Eliminar del menú'"
-    [claseBotonMenu]="'danger'"
-    (platoClickeado)="eliminarPlatoDelMenu($event)">
-  </app-plato-card>
-
-</div>
+  <app-lista-platos
+  [clasesContenedor]="'w-100 d-flex justify-content-center flex-wrap gap-3 container-xl px-md-3 justify-content-xl-start'"
+  [textoBotonMenu_]="'Eliminar del menú'"
+  [claseBotonMenu_]="'danger'"
+  [platosParaMostrar]="platosDelMenu"
+  (platoClickeado)="eliminarPlatoDelMenu($event)">
+  </app-lista-platos>
 
 <div class="container">
   <div

@@ -66,8 +66,10 @@ export class MenuComponent implements OnInit, DoCheck {
 
   //método para obtener el precio total de los platos que estén en el menú
   calcularHealthScore(){
+    let contador = 0;
     this.promedioTotalHealthScore = this.platosDelMenu.reduce((acc: number, plato: any) => {
-      return Math.floor((acc + plato.healthScore) / this.platosDelMenu.length);
+      contador++
+      return Math.floor((acc + plato.healthScore) / contador);
     }, 0)
   }
 }

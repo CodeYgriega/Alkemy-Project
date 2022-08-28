@@ -1,9 +1,9 @@
-<div class="w-100 p-5 pt-0 d-flex flex-wrap justify-content-center gap-3">
+<div class="{{clasesContenedor}}">
   <app-plato-card
   *ngFor="let plato of platosParaMostrar"
   [plato]="plato"
-  [textoBotonMenu]="'Añadir al menú'"
-  [claseBotonMenu]="'primary'"
-  (platoClickeado)="agregarAlMenu($event)">
+  [textoBotonMenu]="textoBotonMenu_"
+  [claseBotonMenu]="claseBotonMenu_"
+  (platoClickeado)="emitir($event)">
   </app-plato-card>
 </div>

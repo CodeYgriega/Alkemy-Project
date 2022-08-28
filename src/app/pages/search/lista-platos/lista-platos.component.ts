@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ManejarMenuService } from 'src/app/services/manejar-menu.service';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-lista-platos',
@@ -8,18 +7,20 @@ import { ManejarMenuService } from 'src/app/services/manejar-menu.service';
 })
 export class ListaPlatosComponent implements OnInit {
 
-  @Input() platosParaMostrar = [];
+  @Output() platoClickeado: EventEmitter<any> = new EventEmitter();
 
-  constructor(private menuService: ManejarMenuService) { }
+  @Input() platosParaMostrar = [];
+  @Input() clasesContenedor!: string;
+  @Input() claseBotonMenu_!: string;
+  @Input() textoBotonMenu_!: string;
+  @Input() funcion!: any;
+
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  //método para agregar un plato al menú
-  //tiene como parámetro el $event que nos trae el componente PLATO-CARD cuando se le hace click, este $event nos trae el plato que ha sido clickeado por el usuario
-  agregarAlMenu(_event: any){
-    //llamamos al método setPlatoAlMenu de nuestro menuService y le pasamos el $event recibido, esto agregará al menú el plato seleccionado por el usuario
-      this.menuService.setPlatoAlMenu(_event);
+  emitir(_event: any){
+    return this.platoClickeado.emit(_event);
   }
-
 }

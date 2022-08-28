@@ -10,7 +10,6 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
-import { FooterComponent } from './shared/footer/footer.component';
 import { SearchComponent } from './pages/search/search.component';
 import { MenuComponent } from './pages/home/menu/menu.component';
 import { PlatoCardComponent } from './pages/home/plato-card/plato-card.component';
@@ -27,7 +26,6 @@ import { ListaPlatosComponent } from './pages/search/lista-platos/lista-platos.c
     HomeComponent,
     DetailsComponent,
     NavbarComponent,
-    FooterComponent,
     SearchComponent,
     FormSearchComponent,
     MenuComponent,
