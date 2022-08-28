@@ -6,3 +6,14 @@
   height: 370px;
   overflow-y: scroll;
 }
+
+@media  screen and (max-width: 992px) {
+  .altura{
+    height: auto;
+  }
+
+  .add_scroll{
+    height: auto;
+    overflow-y: auto;
+  }
+}
