@@ -1,0 +1,78 @@
+<div class="container altura py-5 py-lg-4 py-xl-5">
+  <div class="card bg-dark bg-opacity-75 text-white mx-3 mt-3 shadow">
+    <div class="row">
+
+      <div class="row mx-auto p-lg-0 col-lg-7 col-xl-6">
+        <img
+        src="{{plato.image}}"
+        alt="{{plato.title}}"
+        class="img-fluid">
+      </div>
+
+      <div class="row mx-auto p-3 m-lg-0 col-lg-5 col-xl-6">
+
+        <div class="card-header border-light">
+          <h1>{{plato.title}}</h1>
+          <h2>{{plato.pricePerServing | currency}}</h2>
+        </div>
+
+        <div class="card-body add_scroll">
+
+            <p class="d-flex flex-column gap-2">
+              <span class="fs-5 fw-bold d-flex align-items-center gap-1">
+                <span class="material-symbols-outlined">
+                  event_note
+                </span>
+                Descripción:
+              </span>
+              <span
+              class="card-text"
+              [innerHTML]="plato.summary"></span>
+            </p>
+
+            <p class="d-flex align-items-end gap-2">
+              <span class="fs-5 fw-bold d-flex align-items-center gap-1">
+                <span class="material-symbols-outlined">
+                  alarm
+                </span>
+                Preparación:
+              </span>
+              <span class="card-text">
+                {{plato.readyInMinutes | horasYminutosPipe}}
+              </span>
+            </p>
+
+            <p class="d-flex align-items-end gap-2">
+              <span class="fs-5 fw-bold d-flex align-items-center gap-1">
+                <span class="material-symbols-outlined">
+                  shield_with_heart
+                </span>
+                HealthScore:
+              </span>
+              <span class="card-text">
+                {{plato.healthScore}}%
+              </span>
+            </p>
+
+          <ul
+          *ngIf="plato.diets.length > 0"
+          class="list-group">
+            <p class="fs-5 fw-bold d-flex align-items-center gap-1">
+              <span class="material-symbols-outlined">
+                dining
+              </span>
+              Dietas:
+            </p>
+            <li
+            *ngFor="let item of plato.diets"
+            class="list-group-item bg-dark bg-opacity-50 text-white border-light">
+              {{item | titlecase}}
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

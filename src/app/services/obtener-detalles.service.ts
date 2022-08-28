@@ -13,8 +13,10 @@ export class ObtenerDetallesService {
 
   apiKey: string = "apiKey=f03d14d29efa4e54b15f2fc2ac24df99";
 
+  //inyectamos HttpClient, quien se encargará de hacer la petición GET
   constructor(private http: HttpClient) { }
 
+  //método para hacer la petición, unificando todos los breakpoints declarados anteriormente
   obtenerInfo(id: number){
     return this.http.get(`${this.url}${id}${this.info}${this.apiKey}`);
   }

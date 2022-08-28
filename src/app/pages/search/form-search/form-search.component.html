@@ -1,52 +1,59 @@
-<form class="d-flex flex-column justify-content-start container w-75 px-md-5">
-  <h1 class="row my-4 mx-md-5">Buscador de platos:</h1>
-  <div class="row mx-md-5">
-    <input
-    type="text"
-    class="form-control col rounded-0 shadow"
-    placeholder="Escriba aquí su plato..."
-    #buscador>
+<form class="mb-5 d-flex flex-column justify-content-start container w-75 px-md-5">
 
-    <button
-    class="btn btn-primary col-4 col-lg-2 rounded-0 shadow d-flex justify-content-center"
-    (click)="enviarYbuscarReceta(buscador.value)"
-    [disabled]="mostrarSpinner">
+  <div class="mx-md-5">
+    <h1 class="row my-4 mt-5 fw-bold opacity-75">
+      Buscador de platos:
+    </h1>
 
-      <app-spinner
-      [clase]="'light'"
-      *ngIf="mostrarSpinner">
-      </app-spinner>
+    <div class="row">
+      <input
+      type="text"
+      class="form-control form-control-lg col rounded-0 shadow"
+      placeholder="Escriba aquí su plato..."
+      #buscador>
 
-      <p
-      *ngIf="!mostrarSpinner"
-      class="p-0 m-0 d-flex align-items-center gap-1">
-        Buscar
-        <span class="material-symbols-outlined">
-          search
-        </span>
-      </p>
+      <button
+      class="btn btn-primary col-4 col-lg-2 rounded-0 shadow d-flex justify-content-center"
+      (click)="enviarYbuscarReceta(buscador.value)"
+      [disabled]="mostrarSpinner">
 
-    </button>
-  </div>
+        <app-spinner
+        [clase]="'light'"
+        *ngIf="mostrarSpinner">
+        </app-spinner>
 
-  <div
-  class="fs-3 my-4 mx-md-5"
-  *ngIf="mostrarSpinner">
-    <app-spinner
-    [clase]="'primary'"
+        <p
+        *ngIf="!mostrarSpinner"
+        class="p-0 pt-1 m-0 d-flex align-items-center gap-1">
+          Buscar
+          <span class="material-symbols-outlined">
+            search
+          </span>
+        </p>
+      </button>
+    </div>
+
+    <div
+    class="fs-2 my-5"
     *ngIf="mostrarSpinner">
-    </app-spinner>
-    Buscando resultados...
+      <app-spinner
+      [clase]="'primary'">
+      </app-spinner>
+      Buscando resultados...
+    </div>
+
+    <p
+    class="fs-4 mt-5 bg-dark bg-opacity-50 text-white p-3 rounded shadow"
+    *ngIf="mensajePocosCaracteres">
+      El buscador debe tener como mínimo 3 carácteres para realizar una búsqueda.
+    </p>
+
+    <p
+    class="fs-3 my-5 bg-dark bg-opacity-50 text-white p-3 rounded shadow"
+    *ngIf="mensajeNoHayResultados">
+      No se encontraron resultados para tu búsqueda :( <br>
+      Intenta nuevamente con un plato distinto o verifica si el plato está bien escrito.
+    </p>
+
   </div>
-
 </form>
-
-<div class="w-100 p-5 d-flex flex-wrap justify-content-center gap-3">
-  <app-receta-card
-  *ngFor="let plato of platosObtenidos"
-  [plato]="plato"
-  [textoBotonMenu]="'Añadir al menú'"
-  [claseBotonMenu]="'primary'"
-  (platoClickeado)="agregarAlMenu($event)">
-  </app-receta-card>
-</div>

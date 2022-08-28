@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SpinnerComponent implements OnInit {
 
+  //clase que determinará el color del cual será el spinner
   @Input() clase!: string;
 
   constructor() { }

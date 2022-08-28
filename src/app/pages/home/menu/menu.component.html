@@ -1,39 +1,60 @@
 <div class="container">
 
-  <div class="my-4 mx-5 mx-lg-0">
-    <h1 class="my-4">
+  <div class="my-4 mx-5">
+    <h1 class="my-4 mt-5 fw-bold opacity-75">
       Tu menú:
     </h1>
 
-    <p
+    <div
     *ngIf="platosDelMenu <= 0"
-    class="fs-4 text-dark-opacity-50">
-      Aquí se mostrarán los platos que hayas añadido al menú, para agregar uno navega hacia la sección "Buscar platos" e interactúa con el buscador.
-    </p>
+    class="fs-4 bg-dark bg-opacity-50 text-white p-3 rounded shadow">
+      <p>Aquí se mostrarán los platos que hayas añadido al menú.</p>
+      <p>El menú debe contener 2 platos que sean veganos y 2 platos que no lo sean, es decir, sólo puedes elegir 4 platos en total ¡Escoge bien!</p>
+      <p>Para agregar un plato, navega hacia la sección
+        <a
+        routerLink="/search"
+        class="link-info">
+          Buscar platos
+        </a>
+         y usa el buscador para encontrar tu plato favorito.</p>
+    </div>
   </div>
 
-    <div class="w-100 d-flex justify-content-center flex-wrap gap-3 justify-content-xl-start">
+</div>
 
-      <app-receta-card
-        *ngFor="let plato of platosDelMenu"
-        [plato]="plato"
-        [textoBotonMenu]="'Eliminar del menú'"
-        [claseBotonMenu]="'danger'"
-        (platoClickeado)="eliminarPlatoDelMenu($event)">
-      </app-receta-card>
+<div class="w-100 d-flex justify-content-center flex-wrap gap-3 container-xl px-md-3 justify-content-xl-start">
 
+  <app-plato-card
+    *ngFor="let plato of platosDelMenu"
+    [plato]="plato"
+    [textoBotonMenu]="'Eliminar del menú'"
+    [claseBotonMenu]="'danger'"
+    (platoClickeado)="eliminarPlatoDelMenu($event)">
+  </app-plato-card>
+
+</div>
+
+<div class="container">
+  <div
+    *ngIf="platosDelMenu.length > 0"
+    class="card mx-5 my-4 bg-dark bg-opacity-50 text-white">
+      <div class="card-header">
+        <h3>Resultados: </h3>
+      </div>
+
+      <div class="card-body">
+        <p class="card-text fs-4">
+          Promedio de HealthScore:
+          {{promedioTotalHealthScore}}%
+        </p>
+        <p class="card-text fs-4">
+          Promedio de tiempo de preparación:
+          {{promedioTotalPreparacion | horasYminutosPipe}}
+        </p>
+        <p class="card-text fs-4">
+          Precio total:
+          {{precioTotal | currency}}
+        </p>
+      </div>
     </div>
-
-    <p class="">
-      Precio total:
-      {{precioTotal | currency}}
-    <p>
-    <p class="">
-      Promedio de tiempo de preparación:
-      {{promedioTotalPreparacion | horasYminutosPipe}}
-    <p>
-     <p class="">
-      Promedio total de HealthScore:
-      {{promedioTotalHealthScore | percent}}
-    <p>
 </div>

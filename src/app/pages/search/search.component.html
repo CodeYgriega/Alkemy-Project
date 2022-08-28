@@ -1,2 +1,7 @@
 <app-navbar></app-navbar>
-<app-form-search></app-form-search>
+<app-form-search
+(respuestaApi)="pasarDatosAlListado($event)">
+</app-form-search>
+<app-lista-platos
+[platosParaMostrar]="datos">
+</app-lista-platos>

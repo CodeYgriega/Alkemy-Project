@@ -1,31 +1,31 @@
-<div id="card"class="card shadow">
+<div id="card" class="card bg-light bg-opacity-75 shadow">
 
   <img src="{{plato.image}}"
   alt="Imagen de {{plato.title}}"
   class="card-img-top">
 
   <div class="card-body">
-    <p class="card-title fs-4">
+    <p class="card-title fs-4 fw-bold">
       {{plato.title}}
     </p>
   </div>
 
   <ul class="list-group list-group-flush">
-    <li class="list-group-item py-2">
+    <li class="list-group-item py-2 bg-light bg-opacity-25">
       <span class="fw-bold">
         Precio:
       </span>
       {{plato.pricePerServing | currency}}
     </li>
 
-    <li class="list-group-item py-2">
+    <li class="list-group-item py-2 bg-light bg-opacity-25">
       <span class="fw-bold">
         Preparación:
       </span>
-      {{plato.readyInMinutes}} minutos
+      {{plato.readyInMinutes | horasYminutosPipe}}
     </li>
 
-    <li class="list-group-item py-2">
+    <li class="list-group-item py-2 bg-light bg-opacity-25">
       <span class="fw-bold">
         Vegano:
       </span>
@@ -39,7 +39,7 @@
 
     <a routerLink="/details/{{plato.id}}">
       <button
-      class="btn btn-primary">
+      class="btn btn-info text-white">
         Ver detalles
       </button>
     </a>

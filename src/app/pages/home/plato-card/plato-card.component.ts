@@ -1,11 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-receta-card',
-  templateUrl: './receta-card.component.html',
-  styleUrls: ['./receta-card.component.scss']
+  selector: 'app-plato-card',
+  templateUrl: './plato-card.component.html',
+  styleUrls: ['./plato-card.component.scss']
 })
-export class RecetaCardComponent implements OnInit {
+export class PlatoCardComponent implements OnInit {
 
   //el "plato" que reciba, será cada uno de los resultados de la búsqueda del usuario, y con sus datos rellenaremos la CARD
   @Input() plato!: any;

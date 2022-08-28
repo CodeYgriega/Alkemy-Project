@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FooterComponent } from './footer.component';
+import { PlatoCardComponent } from './plato-card.component';
 
-describe('FooterComponent', () => {
-  let component: FooterComponent;
-  let fixture: ComponentFixture<FooterComponent>;
+describe('PlatoCardComponent', () => {
+  let component: PlatoCardComponent;
+  let fixture: ComponentFixture<PlatoCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FooterComponent ]
+      declarations: [ PlatoCardComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FooterComponent);
+    fixture = TestBed.createComponent(PlatoCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

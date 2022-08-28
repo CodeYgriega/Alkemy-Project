@@ -1,5 +1,6 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
 import { ManejarMenuService } from 'src/app/services/manejar-menu.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-menu',
@@ -66,7 +67,7 @@ export class MenuComponent implements OnInit, DoCheck {
   //método para obtener el precio total de los platos que estén en el menú
   calcularHealthScore(){
     this.promedioTotalHealthScore = this.platosDelMenu.reduce((acc: number, plato: any) => {
-      return (acc + plato.healthScore) / this.platosDelMenu.length;
+      return Math.floor((acc + plato.healthScore) / this.platosDelMenu.length);
     }, 0)
   }
 }

@@ -7,12 +7,26 @@ class="w-100 height pb-5 text-dark-opacity-75 d-flex justify-content-center alig
   Cargando contenido...
 </h1>
 
-<p class="text-danger fs-1">
-  {{platoSolicitado.title}}
-</p>
+<h2
+class="w-100 height pb-5 p-3 d-flex justify-content-center align-items-center gap-2 bg-dark bg-opacity-50 text-white rounded shadow"
+*ngIf="mostrarErrorEnBusqueda">
+  No se han obtenido resultados en la búsqueda :( <br>
+  Inténtelo nuevamente verificando los datos.
+</h2>
 
-<p class="text-warning fs-1">
-  {{platoSolicitado.summary}}
-</p>
+<a
+routerLink="/menu"
+class="text-decoration-none position-absolute fixed-top m-3">
+  <button class="btn btn-primary d-flex align-items-center gap-2">
+    <span class="material-symbols-outlined">
+      arrow_back
+    </span>
+    Volver al menú
+  </button>
+</a>
 
-<img src="{{platoSolicitado.image}}">
+<app-details-card
+*ngIf="!mostrarSpinner"
+[plato]="platoSolicitado">
+</app-details-card>
+

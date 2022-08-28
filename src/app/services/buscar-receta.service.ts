@@ -23,7 +23,7 @@ export class BuscarRecetaService {
   constructor(private http: HttpClient) { }
 
   //método para hacer un GET utilizando los endpoints antes declarados
-  buscarReceta(plato:string){
+  buscarReceta(plato: string){
     //el endpoint final es la URL + el plato que escribió el usuario + & + adherirINFO + & + numeroDeResultados + & + apiKey
     return this.http.get(`${this.url}${plato}&${this.adherirInfo}&${this.numeroDeResultados}&${this.apiKey}`);
   }

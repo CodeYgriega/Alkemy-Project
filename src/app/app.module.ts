@@ -13,10 +13,12 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { SearchComponent } from './pages/search/search.component';
 import { MenuComponent } from './pages/home/menu/menu.component';
-import { RecetaCardComponent } from './pages/home/receta-card/receta-card.component';
+import { PlatoCardComponent } from './pages/home/plato-card/plato-card.component';
 import { FormSearchComponent } from './pages/search/form-search/form-search.component';
 import { HorasYminutosPipePipe } from './pipes/horas-yminutos-pipe.pipe';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
+import { DetailsCardComponent } from './pages/details/details-card/details-card.component';
+import { ListaPlatosComponent } from './pages/search/lista-platos/lista-platos.component';
 
 @NgModule({
   declarations: [
@@ -29,9 +31,11 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
     SearchComponent,
     FormSearchComponent,
     MenuComponent,
-    RecetaCardComponent,
+    PlatoCardComponent,
     HorasYminutosPipePipe,
-    SpinnerComponent
+    SpinnerComponent,
+    DetailsCardComponent,
+    ListaPlatosComponent
   ],
   imports: [
     BrowserModule,
